@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Pacu Jalur - Game Balapan Tradisional Indonesia">
+    <title>Pacu Jalur - Game Tradisional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- AUDIO -->
+    <audio id="bgm" src="./musik.mp3" loop preload="auto"></audio>
+
+    <!-- SCREEN: SPLASH / INSTRUKSI -->
+    <section id="screen-splash" class="screen active">
+        <div class="splash-content">
+            <div class="logo-container">
+                <h1 class="game-title">🏁 PACU JALUR</h1>
+                <p class="game-subtitle">Game Balapan Tradisional Khas Indonesia</p>
+            </div>
+            <div class="instructions-box">
+                <h2>📜 Petunjuk Permainan</h2>
+                <ul>
+                    <li>Masukkan nama masing-masing pemain di Lobby</li>
+                    <li>Tekan tombol <strong>"PACU!"</strong> secara berulang & cepat untuk menggerakkan perahu</li>
+                    <li>Jika menemukan <strong>Checkpoint</strong>, jawab kuis dengan benar untuk mendapatkan <strong>Boost Kecepatan</strong></li>
+                    <li>Pemain pertama yang mencapai garis finis adalah pemenangnya!</li>
+                </ul>
+                <button id="btn-to-lobby" class="btn-primary btn-large" tabindex="0">
+                    <span class="btn-text">🎮 Mulai Bermain</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN: LOBBY -->
+    <section id="screen-lobby" class="screen">
+        <div class="lobby-container">
+            <h1 class="lobby-title">🚣 Lobby Pemain</h1>
+            
+            <div class="players-setup">
+                <!-- Player 1 -->
+                <div class="player-setup-card" id="setup-p1">
+                    <div class="player-badge p1-badge">Pemain 1</div>
+                    <div class="input-group">
+                        <label for="name-p1">Nama Pemain 1</label>
+                        <input type="text" id="name-p1" placeholder="Masukkan nama..." maxlength="12" tabindex="0">
+                    </div>
+                    <div class="setup-actions">
+                        <button id="btn-fill-p1" class="btn-secondary" tabindex="0">✏️ Isi</button>
+                        <button id="btn-ready-p1" class="btn-ready" tabindex="0">⏳ Siap</button>
+                    </div>
+                    <div class="ready-status" id="status-p1">Belum Siap</div>
+                </div>
+
+                <!-- VS Divider -->
+                <div class="vs-divider">⚡ VS ⚡</div>
+
+                <!-- Player 2 -->
+                <div class="player-setup-card" id="setup-p2">
+                    <div class="player-badge p2-badge">Pemain 2</div>
+                    <div class="input-group">
+                        <label for="name-p2">Nama Pemain 2</label>
+                        <input type="text" id="name-p2" placeholder="Masukkan nama..." maxlength="12" tabindex="0">
+                    </div>
+                    <div class="setup-actions">
+                        <button id="btn-fill-p2" class="btn-secondary" tabindex="0">✏️ Isi</button>
+                        <button id="btn-ready-p2" class="btn-ready" tabindex="0">⏳ Siap</button>
+                    </div>
+                    <div class="ready-status" id="status-p2">Belum Siap</div>
+                </div>
+            </div>
+
+            <div class="lobby-footer">
+                <p>Kedua pemain harus menekan <strong>"Siap"</strong> untuk memulai</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN: COUNTDOWN -->
+    <section id="screen-countdown" class="screen">
+        <div class="countdown-container">
+            <div id="countdown-number" class="countdown-number">3</div>
+            <div class="countdown-label">Bersiap...</div>
+        </div>
+    </section>
+
+    <!-- SCREEN: GAME (SPLIT SCREEN) -->
+    <section id="screen-game" class="screen">
+        <div class="split-container">
+            <!-- PLAYER 1 LANE -->
+            <div class="player-lane lane-p1" id="lane-1">
+                <div class="lane-header">
+                    <span class="lane-name" id="lane-name-1">Pemain 1</span>
+                    <span class="lane-progress" id="progress-1">0m</span>
+                </div>
+                
+                <div class="track-area">
+                    <div class="water-bg">
+                        <div class="wave wave-1"></div>
+                        <div class="wave wave-2"></div>
+                        <div class="wave wave-3"></div>
+                    </div>
+                    
+                    <div class="finish-line" id="finish-1">
+                        <div class="finish-banner">🏁 FINISH</div>
+                    </div>
+                    
+                    <div class="checkpoint-markers" id="checkpoints-1"></div>
+                    
+                    <div class="boat-container" id="boat-1">
+                        <div class="boat-body">
+                            <div class="boat-deck"></div>
+                            <div class="boat-stripe"></div>
+                        </div>
+                        <!-- Anak Pacu (Karakter) -->
+                        <div class="paddler" id="paddler-1">
+                            <div class="paddler-head">
+                                <div class="paddler-face">
+                                    <div class="eye left"></div>
+                                    <div class="eye right"></div>
+                                    <div class="mouth"></div>
+                                </div>
+                                <div class="paddler-hat"></div>
+                            </div>
+                            <div class="paddler-torso">
+                                <div class="paddler-arm left"></div>
+                                <div class="paddler-arm right"></div>
+                            </div>
+                            <div class="paddler-paddle left-paddle"></div>
+                            <div class="paddler-paddle right-paddle"></div>
+                        </div>
+                        <div class="splash-effect" id="splash-1"></div>
+                    </div>
+                </div>
+
+                <div class="control-area">
+                    <button id="mash-btn-1" class="mash-button" tabindex="0">
+                        <span class="mash-icon">👆</span>
+                        <span class="mash-text">PACU!</span>
+                        <span class="mash-sub">Tap berulang kali</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- DIVIDER -->
+            <div class="lane-divider"></div>
+
+            <!-- PLAYER 2 LANE -->
+            <div class="player-lane lane-p2" id="lane-2">
+                <div class="lane-header">
+                    <span class="lane-name" id="lane-name-2">Pemain 2</span>
+                    <span class="lane-progress" id="progress-2">0m</span>
+                </div>
+                
+                <div class="track-area">
+                    <div class="water-bg">
+                        <div class="wave wave-1"></div>
+                        <div class="wave wave-2"></div>
+                        <div class="wave wave-3"></div>
+                    </div>
+                    
+                    <div class="finish-line" id="finish-2">
+                        <div class="finish-banner">🏁 FINISH</div>
+                    </div>
+                    
+                    <div class="checkpoint-markers" id="checkpoints-2"></div>
+                    
+                    <div class="boat-container" id="boat-2">
+                        <div class="boat-body">
+                            <div class="boat-deck"></div>
+                            <div class="boat-stripe"></div>
+                        </div>
+                        <!-- Anak Pacu (Karakter) -->
+                        <div class="paddler" id="paddler-2">
+                            <div class="paddler-head">
+                                <div class="paddler-face">
+                                    <div class="eye left"></div>
+                                    <div class="eye right"></div>
+                                    <div class="mouth"></div>
+                                </div>
+                                <div class="paddler-hat"></div>
+                            </div>
+                            <div class="paddler-torso">
+                                <div class="paddler-arm left"></div>
+                                <div class="paddler-arm right"></div>
+                            </div>
+                            <div class="paddler-paddle left-paddle"></div>
+                            <div class="paddler-paddle right-paddle"></div>
+                        </div>
+                        <div class="splash-effect" id="splash-2"></div>
+                    </div>
+                </div>
+
+                <div class="control-area">
+                    <button id="mash-btn-2" class="mash-button" tabindex="0">
+                        <span class="mash-icon">👆</span>
+                        <span class="mash-text">PACU!</span>
+                        <span class="mash-sub">Tap berulang kali</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUIZ OVERLAY -->
+        <div id="quiz-overlay" class="quiz-overlay hidden">
+            <div class="quiz-modal">
+                <div class="quiz-header">
+                    <div class="quiz-icon">❓</div>
+                    <h2 id="quiz-title">Checkpoint Tercapai!</h2>
+                    <p id="quiz-player-name">Pemain 1</p>
+                </div>
+                <div class="quiz-question" id="quiz-question-text">
+                    Pertanyaan akan muncul di sini...
+                </div>
+                <div class="quiz-options" id="quiz-options">
+                    <!-- Options generated by JS -->
+                </div>
+                <div class="quiz-feedback hidden" id="quiz-feedback"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREEN: GAME OVER -->
+    <section id="screen-gameover" class="screen">
+        <div class="gameover-container">
+            <div class="celebration-bg">
+                <div class="firework"></div>
+                <div class="firework"></div>
+                <div class="firework"></div>
+                <div class="confetti-container" id="confetti-box"></div>
+            </div>
+            
+            <div class="winner-crown">👑</div>
+            <h1 class="winner-title">SELAMAT!</h1>
+            <div class="winner-name" id="winner-name">Pemain 1</div>
+            <p class="winner-subtitle">Juara Pacu Jalur! 🏆</p>
+            
+            <div class="gameover-stats">
+                <div class="stat-card">
+                    <span class="stat-label">Jarak Tempuh</span>
+                    <span class="stat-value" id="winner-distance">1000m</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Waktu</span>
+                    <span class="stat-value" id="winner-time">00:00</span>
+                </div>
+            </div>
+
+            <button id="btn-back-lobby" class="btn-primary btn-large" tabindex="0">
+                <span class="btn-text">🔄 Kembali ke Lobby</span>
+            </button>
+        </div>
+    </section>
+
+    <script src="js/game.js"></script>
+</body>
+      </html>
+                  
