@@ -1,0 +1,124 @@
+{
+  "pertanyaan": [
+    {
+      "id": 1,
+      "soal": "Apa ibu kota negara Indonesia?",
+      "pilihan": ["Jakarta", "Surabaya", "Bandung", "Medan"],
+      "jawaban": 0
+    },
+    {
+      "id": 2,
+      "soal": "Siapa presiden pertama Republik Indonesia?",
+      "pilihan": ["Soeharto", "Ir. Soekarno", "B.J. Habibie", "Megawati"],
+      "jawaban": 1
+    },
+    {
+      "id": 3,
+      "soal": "Apa nama mata uang resmi Indonesia?",
+      "pilihan": ["Ringgit", "Baht", "Rupiah", "Peso"],
+      "jawaban": 2
+    },
+    {
+      "id": 4,
+      "soal": "Di provinsi mana tradisi Pacu Jalur berasal?",
+      "pilihan": ["Riau", "Sumatera Barat", "Kalimantan Timur", "Sulawesi Selatan"],
+      "jawaban": 0
+    },
+    {
+      "id": 5,
+      "soal": "Apa nama pulau terbesar di Indonesia?",
+      "pilihan": ["Jawa", "Sumatera", "Kalimantan", "Papua"],
+      "jawaban": 2
+    },
+    {
+      "id": 6,
+      "soal": "Berapa jumlah provinsi di Indonesia saat ini?",
+      "pilihan": ["34", "36", "38", "40"],
+      "jawaban": 2
+    },
+    {
+      "id": 7,
+      "soal": "Apa judul lagu kebangsaan Indonesia?",
+      "pilihan": ["Indonesia Pusaka", "Indonesia Raya", "Garuda Pancasila", "Tanah Airku"],
+      "jawaban": 1
+    },
+    {
+      "id": 8,
+      "soal": "Siapa pahlawan wanita asal Aceh yang melawan Belanda?",
+      "pilihan": ["R.A. Kartini", "Dewi Sartika", "Cut Nyak Dien", "Martha Tiahahu"],
+      "jawaban": 2
+    },
+    {
+      "id": 9,
+      "soal": "Di mana lokasi Candi Borobudur?",
+      "pilihan": ["Jawa Timur", "Jawa Tengah", "DI Yogyakarta", "Jawa Barat"],
+      "jawaban": 1
+    },
+    {
+      "id": 10,
+      "soal": "Apa nama tarian tradisional khas Bali yang terkenal?",
+      "pilihan": ["Tari Saman", "Tari Kecak", "Tari Piring", "Tari Serimpi"],
+      "jawaban": 1
+    },
+    {
+      "id": 11,
+      "soal": "Siapa penulis novel 'Laskar Pelangi'?",
+      "pilihan": ["Andrea Hirata", "Habiburrahman El Shirazy", "Tere Liye", "Dee Lestari"],
+      "jawaban": 0
+    },
+    {
+      "id": 12,
+      "soal": "Apa nama makanan khas Padang yang terkenal dunia?",
+      "pilihan": ["Sate", "Rendang", "Gado-gado", "Soto"],
+      "jawaban": 1
+    },
+    {
+      "id": 13,
+      "soal": "Di provinsi apa letak Danau Toba?",
+      "pilihan": ["Sumatera Barat", "Riau", "Sumatera Utara", "Aceh"],
+      "jawaban": 2
+    },
+    {
+      "id": 14,
+      "soal": "Apa warna bendera nasional Indonesia?",
+      "pilihan": ["Merah Putih", "Merah Kuning", "Putih Biru", "Hijau Merah"],
+      "jawaban": 0
+    },
+    {
+      "id": 15,
+      "soal": "Apa nama alat musik tradisional dari Jawa Barat?",
+      "pilihan": ["Gamelan", "Angklung", "Sasando", "Kolintang"],
+      "jawaban": 1
+    },
+    {
+      "id": 16,
+      "soal": "Siapa pencipta lagu 'Indonesia Pusaka'?",
+      "pilihan": ["W.R. Supratman", "Ismail Marzuki", "C. Simanjuntak", "Kusbini"],
+      "jawaban": 1
+    },
+    {
+      "id": 17,
+      "soal": "Di mana habitat asli Komodo (Varanus komodoensis)?",
+      "pilihan": ["Papua", "Nusa Tenggara Timur", "Maluku", "Sulawesi"],
+      "jawaban": 1
+    },
+    {
+      "id": 18,
+      "soal": "Apa nama upacara adat pemakaman masyarakat Toraja?",
+      "pilihan": ["Rambu Solo'", "Ngaben", "Tiwah", "Sedekah Laut"],
+      "jawaban": 0
+    },
+    {
+      "id": 19,
+      "soal": "Siapa penemu teori gravitasi yang menginspirasi nama satelit Indonesia?",
+      "pilihan": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Nikola Tesla"],
+      "jawaban": 1
+    },
+    {
+      "id": 20,
+      "soal": "Apa nama kerajaan maritim besar di Indonesia pada abad ke-7?",
+      "pilihan": ["Majapahit", "Sriwijaya", "Tarumanegara", "Kutai"],
+      "jawaban": 1
+    }
+  ]
+}
