@@ -525,7 +525,7 @@ document.addEventListener('keydown', (e) => {
 // ============================================
 async function loadQuizData() {
     try {
-        const response = await fetch('./kuis.json');
+        const response = await fetch('/kuis.json');
         const data = await response.json();
         quizQuestions = data.pertanyaan || [];
         // Shuffle questions
